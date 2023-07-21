@@ -6,6 +6,7 @@
 
 #include "clip.h"
 #include "clip_lock_impl.h"
+#include <iostream>
 
 #include <vector>
 #include <stdexcept>
@@ -78,7 +79,7 @@ bool set_text(const std::string& value) {
   lock l;
   if (l.locked()) {
     l.clear();
-    return l.set_data(text_format(), value.c_str(), value.size());
+    return l.set_data(1, value.c_str(), value.size());
   }
   else
     return false;

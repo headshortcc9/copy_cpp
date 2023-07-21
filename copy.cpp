@@ -1,6 +1,6 @@
-#include "clip/clip.h"
+#include "clip_custom/clip.h"
 #include <iostream>
 
 int main() {
-  clip::set_text("Hello World");
+  clip::set_text("asdasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 }

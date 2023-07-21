@@ -3,20 +3,19 @@
 
 cmake_minimum_required(VERSION 3.1.2)
 
-project(clip LANGUAGES CXX)
+project(clip_custom LANGUAGES CXX)
 
 
-set(CLIP_SOURCES clip/clip.cpp)
-  include(CheckIncludeFiles)
-  check_include_files(xcb/xcb.h HAVE_XCB_XLIB_H)
+set(CLIP_SOURCES clip_custom/clip.cpp)
+  # include(CheckIncludeFiles)
+  # check_include_files(xcb/xcb.h HAVE_XCB_XLIB_H)
 
 if(HAVE_XCB_XLIB_H)
     add_definitions(-DHAVE_XCB_XLIB_H)
 
-    list(APPEND CLIP_SOURCES clip/clip_x11.cpp)
+    list(APPEND CLIP_SOURCES clip_custom/clip_x11.cpp)
 
 endif()
-
 
 add_library(clip ${CLIP_SOURCES})
 
@@ -27,4 +26,4 @@ endif()
 
 add_executable(copy copy.cpp)
 target_link_libraries(copy clip)
-target_include_directories(copy PUBLIC clip)
+target_include_directories(copy PUBLIC clip_custom)

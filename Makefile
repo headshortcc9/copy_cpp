@@ -142,53 +142,53 @@ copy/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy.dir/build.make CMakeFiles/copy.dir/build
 .PHONY : copy/fast
 
-clip/clip.o: clip/clip.cpp.o
-.PHONY : clip/clip.o
+clip_custom/clip.o: clip_custom/clip.cpp.o
+.PHONY : clip_custom/clip.o
 
 # target to build an object file
-clip/clip.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip.cpp.o
-.PHONY : clip/clip.cpp.o
+clip_custom/clip.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip.cpp.o
+.PHONY : clip_custom/clip.cpp.o
 
-clip/clip.i: clip/clip.cpp.i
-.PHONY : clip/clip.i
+clip_custom/clip.i: clip_custom/clip.cpp.i
+.PHONY : clip_custom/clip.i
 
 # target to preprocess a source file
-clip/clip.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip.cpp.i
-.PHONY : clip/clip.cpp.i
+clip_custom/clip.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip.cpp.i
+.PHONY : clip_custom/clip.cpp.i
 
-clip/clip.s: clip/clip.cpp.s
-.PHONY : clip/clip.s
+clip_custom/clip.s: clip_custom/clip.cpp.s
+.PHONY : clip_custom/clip.s
 
 # target to generate assembly for a file
-clip/clip.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip.cpp.s
-.PHONY : clip/clip.cpp.s
+clip_custom/clip.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip.cpp.s
+.PHONY : clip_custom/clip.cpp.s
 
-clip/clip_x11.o: clip/clip_x11.cpp.o
-.PHONY : clip/clip_x11.o
+clip_custom/clip_x11.o: clip_custom/clip_x11.cpp.o
+.PHONY : clip_custom/clip_x11.o
 
 # target to build an object file
-clip/clip_x11.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip_x11.cpp.o
-.PHONY : clip/clip_x11.cpp.o
+clip_custom/clip_x11.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip_x11.cpp.o
+.PHONY : clip_custom/clip_x11.cpp.o
 
-clip/clip_x11.i: clip/clip_x11.cpp.i
-.PHONY : clip/clip_x11.i
+clip_custom/clip_x11.i: clip_custom/clip_x11.cpp.i
+.PHONY : clip_custom/clip_x11.i
 
 # target to preprocess a source file
-clip/clip_x11.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip_x11.cpp.i
-.PHONY : clip/clip_x11.cpp.i
+clip_custom/clip_x11.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip_x11.cpp.i
+.PHONY : clip_custom/clip_x11.cpp.i
 
-clip/clip_x11.s: clip/clip_x11.cpp.s
-.PHONY : clip/clip_x11.s
+clip_custom/clip_x11.s: clip_custom/clip_x11.cpp.s
+.PHONY : clip_custom/clip_x11.s
 
 # target to generate assembly for a file
-clip/clip_x11.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip/clip_x11.cpp.s
-.PHONY : clip/clip_x11.cpp.s
+clip_custom/clip_x11.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clip.dir/build.make CMakeFiles/clip.dir/clip_custom/clip_x11.cpp.s
+.PHONY : clip_custom/clip_x11.cpp.s
 
 copy.o: copy.cpp.o
 .PHONY : copy.o
@@ -224,12 +224,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... clip"
 	@echo "... copy"
-	@echo "... clip/clip.o"
-	@echo "... clip/clip.i"
-	@echo "... clip/clip.s"
-	@echo "... clip/clip_x11.o"
-	@echo "... clip/clip_x11.i"
-	@echo "... clip/clip_x11.s"
+	@echo "... clip_custom/clip.o"
+	@echo "... clip_custom/clip.i"
+	@echo "... clip_custom/clip.s"
+	@echo "... clip_custom/clip_x11.o"
+	@echo "... clip_custom/clip_x11.i"
+	@echo "... clip_custom/clip_x11.s"
 	@echo "... copy.o"
 	@echo "... copy.i"
 	@echo "... copy.s"

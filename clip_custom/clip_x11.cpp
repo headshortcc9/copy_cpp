@@ -6,7 +6,7 @@
 
 #include "clip.h"
 #include "clip_lock_impl.h"
-
+#include <iostream>
 #include <xcb/xcb.h>
 
 #include <atomic>
@@ -23,9 +23,7 @@
 #include <thread>
 #include <vector>
 
-#ifdef HAVE_PNG_H
-  #include "clip_x11_png.h"
-#endif
+
 
 #define CLIP_SUPPORT_SAVE_TARGETS 1
 
@@ -121,15 +119,16 @@ public:
           // Start the SAVE_TARGETS mechanism so the X11
           // CLIPBOARD_MANAGER will save our clipboard data
           // from now on.
+          std::cout<<"w1"<<std::endl;
           get_data_from_selection_owner(
             { get_atom(SAVE_TARGETS) },
             []() -> bool { return true; },
             x11_clipboard_manager);
+            std::cout<<"w2"<<std::endl;
         }
       }
     }
 #endif
-
     if (m_window) {
       xcb_destroy_window(m_connection, m_window);
       xcb_flush(m_connection);
@@ -247,9 +246,10 @@ public:
     std::copy(buf,
               buf+len,
               shared_data_buf->begin());
-    for (xcb_atom_t atom : atoms)
+    for (xcb_atom_t atom : atoms){
       m_data[atom] = shared_data_buf;
-
+    }
+    std::cout<<"nghia"<<std::endl;
     return true;
   }
 
@@ -662,13 +662,16 @@ private:
       // We use the "m_incr_received" to wait several timeouts in case
       // that we've received the INCR SelectionNotify or
       // PropertyNotify events.
+      
       do {
         m_incr_received = false;
-
+        
         // Wait a response for 100 milliseconds
         std::cv_status status =
-          m_cv.wait_for(m_lock,
-                        std::chrono::milliseconds(get_x11_wait_timeout()));
+          // m_cv.wait_for(m_lock,
+          //               std::chrono::milliseconds(get_x11_wait_timeout()));
+          m_cv.wait_for(m_lock,std::chrono::milliseconds(0));
+        std::cout<<"w3"<<std::endl;
         if (status == std::cv_status::no_timeout) {
           // If the condition variable was notified, it means that the
           // callback was called correctly.
